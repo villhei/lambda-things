@@ -1,6 +1,7 @@
-import {Fun, True, False, AND, OR, NOT } from '~/lambda'
+import * as lambda from '~/lambda'
+import { Fun, True, False, Identity } from '~/lambda'
 
-type LabeledFun =  [Fun, string]
+type LabeledFun = [Fun, string]
 
 const T: LabeledFun = [True, 'TRUE']
 const F: LabeledFun = [False, 'FALSE']
@@ -22,7 +23,7 @@ function testTruthTable(table: BinaryTruthTable, fun: Fun) {
 }
 
 describe('Lambda Booleans', () => {
-
+  const { AND, OR, NOT } = lambda
   describe('AND', () => {
     const permutations: BinaryTruthTable = [
         [[T, T], T],
